@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UMEED - Disaster Management System" />
+  <title>UMEED | Disaster Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+      <span>UMEED<small>DISASTER MANAGEMENT SYSTEM</small></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#rescue">Rescue ID</a>
+      <a href="#helplines">Helplines</a>
+    </div>
+
+    <div class="nav-tools">
+      <div class="clock-wrap">
+        <span id="currentDate"></span>
+        <strong id="liveClock"></strong>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <a href="tel:112" class="emergency-call"><i class="fa-solid fa-phone"></i> 112</a>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="pulse"></span> NATIONAL DISASTER RESPONSE NETWORK</p>
+        <h1>Prepared today.<br /><span>Protected tomorrow.</span></h1>
+        <p class="hero-copy">
+          A single command platform that helps citizens request assistance and enables teams
+          to coordinate a faster disaster response.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary ripple" href="#rescue">
+            <i class="fa-solid fa-id-card"></i> Generate Rescue ID
+          </a>
+          <a class="button button-glass" href="#helplines">
+            <i class="fa-solid fa-headset"></i> Emergency contacts
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-status glass-card">
+        <div class="status-head">
+          <span><i class="fa-solid fa-satellite-dish"></i> RESPONSE GRID</span>
+          <small><i class="fa-solid fa-circle"></i> ONLINE</small>
+        </div>
+
+        <div class="radar-area">
+          <span class="radar"></span>
+          <i class="fa-solid fa-location-dot marker m-one"></i>
+          <i class="fa-solid fa-location-dot marker m-two"></i>
+          <i class="fa-solid fa-location-dot marker m-three"></i>
+        </div>
+
+        <div class="status-foot">
+          <div><small>Active zones</small><strong>36</strong></div>
+          <div><small>Teams online</small><strong>248</strong></div>
+          <div><small>Avg. response</small><strong>08 min</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alert-ticker">
+      <div class="ticker-label">
+        <i class="fa-solid fa-triangle-exclamation"></i> EMERGENCY ALERT
+      </div>
+      <div class="ticker-window">
+        <div class="ticker-track">
+          <span>For life-threatening emergencies, call <b>112</b> immediately.</span>
+          <span>Register your rescue request with accurate contact and location details.</span>
+          <span>NDRF, police, ambulance and fire services are available 24 × 7.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="container dashboard-section">
+      <div class="section-head">
+        <div>
+          <p class="section-tag">NATIONAL OVERVIEW</p>
+          <h2>Emergency response dashboard</h2>
+        </div>
+        <p>Live operational indicators for the UMEED response network.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon coral"><i class="fa-solid fa-bell"></i></span>
+          <small>Active Rescue Requests</small>
+          <strong class="counter" data-target="12">0</strong>
+          <em><i class="fa-solid fa-arrow-down"></i> 3 resolved today</em>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon blue"><i class="fa-solid fa-id-badge"></i></span>
+          <small>IDs Generated</small>
+          <strong class="counter" data-target="8426">0</strong>
+          <em><i class="fa-solid fa-arrow-up"></i> 642 this week</em>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon green"><i class="fa-solid fa-people-group"></i></span>
+          <small>Rescue Teams</small>
+          <strong class="counter" data-target="248">0</strong>
+          <em><i class="fa-solid fa-location-arrow"></i> 18 deployed now</em>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon amber"><i class="fa-solid fa-tent"></i></span>
+          <small>Relief Camps</small>
+          <strong class="counter" data-target="186">0</strong>
+          <em><i class="fa-solid fa-users"></i> 24,590 supported</em>
+        </article>
+      </div>
+    </section>
+
+    <section id="rescue" class="rescue-section">
+      <div class="container">
+        <div class="generator-heading">
+          <p class="section-tag">SECURE REGISTRATION</p>
+          <h2>Rescue ID Generator</h2>
+          <p>Complete the form to create a secure rescue reference for coordinated support.</p>
+        </div>
+
+        <div class="generator-layout">
+          <form id="rescueForm" class="form-card" novalidate>
+            <div class="form-header">
+              <span><i class="fa-solid fa-clipboard-user"></i></span>
+              <div>
+                <h3>Register rescue request</h3>
+                <p>Fields marked <b>*</b> are required.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <label class="field wide">
+                <span class="field-label"><i class="fa-solid fa-user"></i> Full Name <b>*</b></span>
+                <input id="fullName" type="text" placeholder="Enter full name" />
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-cake-candles"></i> Age <b>*</b></span>
+                <input id="age" type="number" min="1" max="120" placeholder="Enter age" />
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-venus-mars"></i> Gender <b>*</b></span>
+                <select id="gender">
+                  <option value="">Select gender</option>
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-mobile-screen-button"></i> Phone Number <b>*</b></span>
+                <input id="phone" inputmode="numeric" maxlength="10" placeholder="10-digit number" />
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-envelope"></i> Email <b>*</b></span>
+                <input id="email" type="email" placeholder="name@example.com" />
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-droplet"></i> Blood Group <b>*</b></span>
+                <select id="bloodGroup">
+                  <option value="">Select group</option>
+                  <option>A+</option><option>A-</option>
+                  <option>B+</option><option>B-</option>
+                  <option>AB+</option><option>AB-</option>
+                  <option>O+</option><option>O-</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-house-tsunami"></i> Disaster Type <b>*</b></span>
+                <select id="disaster">
+                  <option value="">Select type</option>
+                  <option value="Flood">Flood</option>
+                  <option value="Earthquake">Earthquake</option>
+                  <option value="Cyclone">Cyclone</option>
+                  <option value="Fire">Fire</option>
+                  <option value="Landslide">Landslide</option>
+                  <option value="Tsunami">Tsunami</option>
+                  <option value="Other">Other</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-map"></i> State <b>*</b></span>
+                <select id="state"><option value="">Select state / UT</option></select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-map-location-dot"></i> District <b>*</b></span>
+                <select id="district" disabled><option value="">Select state first</option></select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-city"></i> City <b>*</b></span>
+                <select id="city" disabled><option value="">Select district first</option></select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-signal"></i> Rescue Priority <b>*</b></span>
+                <select id="priority">
+                  <option value="">Select priority</option>
+                  <option>Critical</option>
+                  <option>High</option>
+                  <option>Medium</option>
+                  <option>Low</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-list-check"></i> Rescue Status <b>*</b></span>
+                <select id="status">
+                  <option value="">Select status</option>
+                  <option>Pending</option>
+                  <option>Rescue Requested</option>
+                  <option>Rescue In Progress</option>
+                  <option>Rescued</option>
+                  <option>Safe</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-notes-medical"></i> Medical Condition <b>*</b></span>
+                <select id="medical">
+                  <option value="">Select condition</option>
+                  <option>Immediate medical attention</option>
+                  <option>Injured but stable</option>
+                  <option>Medication required</option>
+                  <option>No known medical concern</option>
+                </select>
+                <small class="error"></small>
+              </label>
+
+              <label class="field">
+                <span class="field-label"><i class="fa-solid fa-people-roof"></i> Family Members <b>*</b></span>
+                <input id="family" type="number" min="0" placeholder="Number excluding you" />
+                <small class="error"></small>
+              </label>
+
+              <label class="field wide">
+                <span class="field-label"><i class="fa-solid fa-phone-volume"></i> Emergency Contact <b>*</b></span>
+                <input id="emergencyContact" inputmode="numeric" maxlength="10" placeholder="10-digit emergency contact" />
+                <small class="error"></small>
+              </label>
+            </div>
+
+            <button type="submit" class="button button-primary generate ripple">
+              <i class="fa-solid fa-shield-heart"></i> Generate Rescue ID
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+
+          <aside class="result-column">
+            <div id="resultEmpty" class="empty-card">
+              <span class="empty-icon"><i class="fa-solid fa-fingerprint"></i></span>
+              <h3>Ready to create a rescue ID</h3>
+              <p>Your professionally formatted registration card will appear here after submission.</p>
+              <code>FLD-KNP-YYYYMMDD-0001</code>
+            </div>
+
+            <article id="resultCard" class="rescue-card hidden">
+              <div class="slip-head">
+                <div>
+                  <span>UMEED</span>
+                  <small>DISASTER MANAGEMENT SYSTEM</small>
+                </div>
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+
+              <div class="slip-id">
+                <small>RESCUE REGISTRATION ID</small>
+                <h3 id="resultId">---</h3>
+                <span id="priorityBadge" class="priority-badge">---</span>
+              </div>
+
+              <div id="resultDetails" class="slip-details"></div>
+
+              <div class="slip-actions">
+                <button id="copyBtn"><i class="fa-regular fa-copy"></i> Copy Rescue ID</button>
+                <button id="printBtn"><i class="fa-solid fa-print"></i> Print Rescue Slip</button>
+                <button id="downloadBtn"><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+                <button id="resetBtn" class="reset"><i class="fa-solid fa-arrow-rotate-left"></i> Reset Form</button>
+              </div>
+            </article>
+
+            <div class="search-card">
+              <div class="search-title">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <div>
+                  <h3>Search Rescue ID</h3>
+                  <p>Search records created in this browser session.</p>
+                </div>
+              </div>
+
+              <div class="search-input">
+                <input id="searchId" placeholder="e.g. FLD-KNP-20260731-0001" />
+                <button id="searchBtn" aria-label="Search Rescue ID">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+
+              <small id="searchMessage"></small>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="helplines" class="helpline-section">
+      <div class="container">
+        <div class="helpline-intro">
+          <p class="section-tag light">24 × 7 EMERGENCY ASSISTANCE</p>
+          <h2>Fast help begins with one call.</h2>
+          <p>Call the appropriate service immediately when there is danger to life, property, or public safety.</p>
+        </div>
+
+        <div class="helpline-grid">
+          <a href="tel:112"><i class="fa-solid fa-phone-volume"></i><span><small>National Emergency</small><b>112</b></span></a>
+          <a href="tel:01124363260"><i class="fa-solid fa-helmet-safety"></i><span><small>NDRF</small><b>011-24363260</b></span></a>
+          <a href="tel:100"><i class="fa-solid fa-shield-halved"></i><span><small>Police</small><b>100</b></span></a>
+          <a href="tel:108"><i class="fa-solid fa-truck-medical"></i><span><small>Ambulance</small><b>108</b></span></a>
+          <a href="tel:101"><i class="fa-solid fa-fire-extinguisher"></i><span><small>Fire Brigade</small><b>101</b></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+          <span>UMEED<small>DISASTER MANAGEMENT SYSTEM</small></span>
+        </a>
+        <p>Building resilient communities through connected emergency response.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#rescue">Rescue registration</a>
+        <a href="#helplines">Emergency helplines</a>
+      </div>
+
+      <div>
+        <h4>Follow UMEED</h4>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 UMEED - Disaster Management System
+      <span>Made with <i class="fa-solid fa-heart"></i> for safer communities</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Assessment | UMEED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+  <span class="logo-icon">✚</span>
+
+  <span class="logo-text">
+    <strong>UMEED</strong>
+    <small>Unified Management for Emergency Evacuation and Disaster Response</small>
+  </span>
+</a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="migration-center.html">Migration Centres</a></li>
+        <li><a href="transport.html">Transport</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a class="active" href="medical.html">Medical</a></li>
+        <li><a href="shelter.html">Shelter</a></li>
+        <li><a href="relief.html">Relief</a></li>
+        <li><a href="status.html">Victim Status</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Heading -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">HEALTHCARE SUPPORT</p>
+        <h1>Medical Assessment</h1>
+        <p>
+          Assess injuries, treatment requirements, and current health
+          condition at the migration centre.
+        </p>
+      </div>
+    </section>
+
+    <!-- Medical Record Form -->
+    <section class="locator-section">
+      <div class="container">
+        <div class="form-card">
+          <div class="list-heading">
+
+    <h2>Victim Medical Record</h2>
+
+    <div class="form-group">
+        <label for="victimSelect">Select Victim</label>
+        <select id="victimSelect">
+            <option value="">Loading victims...</option>
+        </select>
+    </div>
+
+    <p>
+        Rescue ID:
+        <strong id="victimId">---</strong>
+    </p>
+
+</div>
+
+          <form class="details-form" id="medicalForm">
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="medicalName">Victim Name</label>
+                <input id="medicalName" readonly placeholder="Victim name">
+              </div>
+
+              <div class="form-group">
+                <label for="injuryStatus">Injury Status</label>
+                <select id="injuryStatus">
+  <option value="Minor">Minor</option>
+  <option value="Moderate">Moderate</option>
+  <option value="Critical">Critical</option>
+</select>
+              </div>
+
+              <div class="form-group">
+                <label for="treatment">Treatment Required</label>
+                <select id="treatment">
+                  <option>First Aid and Observation</option>
+                  <option>Hospital Referral</option>
+                  <option>Medication Only</option>
+                </select>
+              </div>
+              <div class="form-group">
+    <label for="bloodPressure">Blood Pressure</label>
+    <input
+        type="text"
+        id="bloodPressure"
+        placeholder="120/80"
+    >
+</div>
+
+<div class="form-group">
+    <label for="pulseRate">Pulse Rate</label>
+    <input
+        type="number"
+        id="pulseRate"
+        placeholder="72"
+    >
+</div>
+
+<div class="form-group">
+    <label for="temperature">Temperature (°C)</label>
+    <input
+        type="number"
+        step="0.1"
+        id="temperature"
+        placeholder="98.6"
+    >
+</div>
+
+              <div class="form-group">
+                <label for="medicalTeam">Medical Team</label>
+                <input id="medicalTeam" value="Dr. Priya Menon — Team A">
+              </div>
+
+              <div class="form-group">
+                <label for="healthStatus">Current Health Status</label>
+                <select id="healthStatus">
+  <option value="Pending">Pending</option>
+  <option value="Under Treatment">Under Treatment</option>
+  <option value="Recovered">Recovered</option>
+  <option value="Referred">Referred</option>
+</select>
+              </div>
+
+              <div class="form-group">
+                <label for="medicalNotes">Medical Notes</label>
+                <input
+                  id="medicalNotes"
+                  value="Minor cuts treated. Rest advised."
+                >
+              </div>
+
+            </div>
+
+            <button class="primary-button" type="submit">
+              Update Medical Record
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 UMEED — Disaster Rescue Management System. SIH Project.</p>
+      <p>Emergency: <a href="tel:108">108</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relief Distribution | UMEED</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="site-header"><nav class="navbar container">
+    <a class="logo" href="index.html">
+  <span class="logo-icon">✚</span>
+
+  <span class="logo-text">
+    <strong>UMEED</strong>
+    <small>Unified Management for Emergency Evacuation and Disaster Response</small>
+  </span>
+</a>
+    
+    <button class="menu-toggle" type="button">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="migration-center.html">Migration Centres</a></li>
+      <li><a href="transport.html">Transport</a></li><li><a href="registration.html">Registration</a></li>
+      <li><a href="medical.html">Medical</a></li><li><a href="shelter.html">Shelter</a></li>
+      <li><a class="active" href="relief.html">Relief</a></li><li><a href="status.html">Victim Status</a></li>
+    </ul>
+  </nav></header>
+
+  <main>
+    <!-- Page heading -->
+    <section class="page-hero"><div class="container">
+      <p class="section-label">ESSENTIAL RELIEF</p><h1>Food & Essential Supplies</h1>
+      <p>Record the distribution of essential relief items provided to victims at the centre.</p>
+    </div></section>
+
+    <!-- Relief distribution checklist -->
+    <section class="locator-section"><div class="container">
+      <div class="form-card">
+        <div class="list-heading">
+<div class="list-heading">
+
+    <h2>Relief Distribution Record</h2>
+
+    <div class="form-group">
+        <label for="victimSelect">Select Victim</label>
+        <select id="victimSelect">
+            <option value="">Loading victims...</option>
+        </select>
+    </div>
+
+    <p>
+        Victim:
+        <strong id="victimName">Select a victim</strong>
+        · Rescue ID:
+        <strong id="victimId">---</strong>
+    </p>
+
+</div>
+
+        <form class="details-form" id="reliefForm">
+
+  <div class="relief-grid">
+
+    <label class="relief-item">
+      <input type="checkbox" id="food" checked>
+      <span class="relief-icon">🍛</span>
+      <span>
+        <strong>Food</strong>
+        <small>Meal package provided</small>
+      </span>
+    </label>
+
+    <label class="relief-item">
+      <input type="checkbox" id="water" checked>
+      <span class="relief-icon">💧</span>
+      <span>
+        <strong>Water</strong>
+        <small>Drinking water provided</small>
+      </span>
+    </label>
+
+    <label class="relief-item">
+      <input type="checkbox" id="medicine" checked>
+      <span class="relief-icon">💊</span>
+      <span>
+        <strong>Medicine</strong>
+        <small>First-aid medicine provided</small>
+      </span>
+    </label>
+
+    <label class="relief-item">
+      <input type="checkbox" id="blanket">
+      <span class="relief-icon">🛏️</span>
+      <span>
+        <strong>Blanket</strong>
+        <small>Pending distribution</small>
+      </span>
+    </label>
+
+    <label class="relief-item">
+      <input type="checkbox" id="clothes" checked>
+      <span class="relief-icon">👕</span>
+      <span>
+        <strong>Clothes</strong>
+        <small>Emergency clothing provided</small>
+      </span>
+    </label>
+
+  </div>
+
+  <div class="form-group full-width">
+    <label for="distributionStatus">Distribution Status</label>
+    <select id="distributionStatus">
+      <option value="Pending">Pending</option>
+      <option value="Distributed">Distributed</option>
+    </select>
+  </div>
+
+  <div class="form-group full-width">
+    <label for="remarks">Remarks</label>
+    <textarea
+      id="remarks"
+      rows="4"
+      placeholder="Enter any remarks here..."
+    ></textarea>
+  </div>
+
+  <button class="primary-button" type="submit">
+    Update Distribution Status
+  </button>
+
+</form>
+      </div>
+    </div></section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer"><div class="container footer-bottom">
+    <p>© 2026 UMEED -  Disaster Rescue Management System. SIH Project.</p><p>Emergency: <a href="tel:112">112</a></p>
+  </div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

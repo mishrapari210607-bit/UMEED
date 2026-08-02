@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find migration centres through UMEED">
+  <title>Migration Centre Locator | UMEED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+  <span class="logo-icon">✚</span>
+
+  <span class="logo-text">
+    <strong>UMEED</strong>
+    <small>Unified Management for Emergency Evacuation and Disaster Response</small>
+  </span>
+</a>
+
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="migration-center.html">Migration Centres</a></li>
+        <li><a href="transport.html">Transport</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="medical.html">Medical</a></li>
+        <li><a href="shelter.html">Shelter</a></li>
+        <li><a href="relief.html">Relief</a></li>
+        <li><a href="status.html">Victim Status</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Heading -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">SAFE LOCATION SUPPORT</p>
+        <h1>Migration Centre Locator</h1>
+        <p>
+          Find verified migration centres with live capacity, available beds,
+          contact information, and distance details.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="locator-section">
+      <div class="container">
+
+        <div class="search-panel">
+          <div>
+            <p class="section-label blue-label">SEARCH CENTRES</p>
+            <h2>Find a safe centre near you</h2>
+          </div>
+
+          <form class="centre-search-form" id="centreSearchForm">
+            <label for="centreSearch">Search by city or district</label>
+
+            <div class="search-input-group">
+              <input
+                type="search"
+                id="centreSearch"
+                placeholder="Example: Chennai, Mumbai, Delhi"
+                autocomplete="off"
+              >
+              <button type="submit" class="primary-button">Search</button>
+            </div>
+          </form>
+        </div>
+
+
+</div>
+        <!-- Migration Centre List -->
+        <section class="centre-list-section">
+          <div class="list-heading">
+            <h2>Nearby Migration Centres</h2>
+            <p id="searchResultText">
+            </p>
+          </div>
+
+          <div class="centre-list" id="centreList">
+
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Emergency Help -->
+    <section class="status-banner">
+      <div class="container status-banner-content">
+        <div>
+          <p class="section-label">NEED IMMEDIATE HELP?</p>
+          <h2>Call the emergency response team.</h2>
+        </div>
+
+        <a href="tel:112" class="light-button">Call 112 Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 UMEED — Disaster Rescue Management System. SIH Project.</p>
+      <p>Emergency: <a href="tel:112">112</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Victim Status | UMEED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+<nav class="navbar container">
+
+<a class="logo" href="index.html">
+
+<span class="logo-icon">✚</span>
+
+<span class="logo-text">
+<strong>UMEED</strong>
+<small>Unified Management for Emergency Evacuation and Disaster Response</small>
+</span>
+
+</a>
+
+
+<button class="menu-toggle" type="button">☰</button>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="migration-center.html">Migration Centres</a></li>
+<li><a href="transport.html">Transport</a></li>
+<li><a href="registration.html">Registration</a></li>
+<li><a href="medical.html">Medical</a></li>
+<li><a href="shelter.html">Shelter</a></li>
+<li><a href="relief.html">Relief</a></li>
+<li><a class="active" href="status.html">Victim Status</a></li>
+
+</ul>
+
+</nav>
+</header>
+
+
+
+<main>
+
+
+<section class="page-hero">
+
+<div class="container">
+
+<p class="section-label">
+FINAL CARE UPDATE
+</p>
+
+<h1>
+Victim Status
+</h1>
+
+<p>
+View the current and final status of a rescued victim during the relief process.
+</p>
+
+</div>
+
+</section>
+
+
+
+
+<section class="locator-section">
+
+<div class="container">
+
+
+
+<!-- Victim Selection -->
+
+<div class="form-card">
+
+<h2>Select Victim</h2>
+
+
+<div class="form-group">
+
+<label for="statusVictim">
+Victim Name
+</label>
+
+
+<select id="statusVictim">
+
+<option value="">
+Select Victim
+</option>
+
+
+</select>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Victim Profile -->
+
+<div class="victim-profile">
+
+
+<div class="profile-avatar" id="profileAvatar">
+--
+</div>
+
+
+
+<div>
+
+<p class="section-label blue-label" id="rescueId">
+RESCUE ID
+</p>
+
+
+<h2 id="victimName">
+Select Victim
+</h2>
+
+
+<p id="centreName">
+Assigned Centre:
+</p>
+
+
+</div>
+
+
+
+<span class="status-badge open-status" id="currentStatus">
+
+Status
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<!-- Status Cards -->
+
+<section class="status-overview">
+
+<h2>Current Victim Status</h2>
+
+<div class="status-card-grid">
+
+<article class="status-card" id="safeCard">
+<span>✓</span>
+<h3>Safe at Centre</h3>
+<p>Victim has arrived safely and has been registered.</p>
+</article>
+
+<article class="status-card" id="treatmentCard">
+<span>✚</span>
+<h3>Under Treatment</h3>
+<p>Medical assessment or treatment is currently active.</p>
+</article>
+
+<article class="status-card" id="shiftedCard">
+<span>→</span>
+<h3>Shifted</h3>
+<p>Victim has been shifted to another centre or hospital.</p>
+</article>
+
+<article class="status-card" id="familyCard">
+<span>♥</span>
+<h3>Reunited with Family</h3>
+<p>Victim has safely reunited with family members.</p>
+</article>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- Update Status Form -->
+
+
+<div class="form-card">
+
+
+<h2>
+Update Final Status
+</h2>
+
+
+
+<form class="details-form" id="statusForm">
+
+
+
+<div class="form-grid">
+
+
+
+<div class="form-group">
+
+<label for="finalStatus">
+Select Status
+</label>
+
+
+<select id="finalStatus">
+
+
+<option value="">
+Select Status
+</option>
+
+
+<option value="Safe at Centre">
+Safe at Centre
+</option>
+
+
+<option value="Under Treatment">
+Under Treatment
+</option>
+
+
+<option value="Shifted">
+Shifted
+</option>
+
+
+<option value="Reunited with Family">
+Reunited with Family
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+<label for="statusDate">
+Last Updated
+</label>
+
+
+<input 
+id="statusDate"
+type="datetime-local"
+>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="form-group full-width">
+
+<label for="statusNote">
+Status Note
+</label>
+
+
+<textarea 
+id="statusNote"
+rows="4"
+>
+Victim is safe at the migration centre.
+Medical first aid completed and shelter allocated.
+</textarea>
+
+
+</div>
+
+
+
+
+<button class="primary-button" type="submit">
+
+Save Status Update
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<footer class="site-footer">
+
+<div class="container footer-bottom">
+
+<p>
+© 2026 UMEED - Disaster Rescue Management System. SIH Project.
+</p>
+
+<p>
+Emergency:
+<a href="tel:112">112</a>
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

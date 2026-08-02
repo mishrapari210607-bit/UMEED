@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shelter | UMEED</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+<nav class="navbar container">
+
+<a class="logo" href="index.html">
+
+<span class="logo-icon">✚</span>
+
+<span class="logo-text">
+
+<strong>UMEED</strong>
+
+<small>
+Unified Management for Emergency Evacuation and Disaster Response
+</small>
+
+</span>
+
+</a>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="registration.html">Registration</a></li>
+<li><a class="active" href="shelter.html">Shelter</a></li>
+<li><a href="relief.html">Relief</a></li>
+<li><a href="status.html">Victim Status</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+<main>
+
+
+<section class="page-hero">
+
+<div class="container">
+
+<p class="section-label">
+SHELTER MANAGEMENT
+</p>
+
+<h1>
+Available Shelters
+</h1>
+
+<p>
+View available shelters and select rescued victims.
+</p>
+
+</div>
+
+</section>
+
+
+
+
+<section class="locator-section">
+
+<div class="container">
+
+
+<div class="form-card">
+
+
+<h2>
+Victim Details
+</h2>
+
+
+
+<div class="form-group">
+
+<label>
+Select Victim
+</label>
+
+
+<select id="shelterVictimSelect">
+
+<option>
+Loading victims...
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+<p>
+Selected Victim:
+<strong id="shelterVictimName">
+---
+</strong>
+</p>
+
+
+
+<p>
+Rescue ID:
+<strong id="shelterVictimId">
+---
+</strong>
+</p>
+
+
+
+</div>
+
+<div class="form-card">
+
+<h2>
+Add New Shelter
+</h2>
+
+
+<div class="form-group">
+
+<label>
+Shelter Name
+</label>
+
+<input 
+type="text"
+id="shelterName"
+placeholder="Enter shelter name">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Location
+</label>
+
+<input 
+type="text"
+id="shelterLocation"
+placeholder="Enter location">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Capacity
+</label>
+
+<input 
+type="number"
+id="shelterCapacity"
+placeholder="Total capacity">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Available Beds
+</label>
+
+<input 
+type="number"
+id="availableBeds"
+placeholder="Available beds">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Medical Facility
+</label>
+
+<select id="medicalFacility">
+
+<option value="true">
+Available
+</option>
+
+<option value="false">
+Not Available
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Food Available
+</label>
+
+<select id="foodAvailable">
+
+<option value="true">
+Available
+</option>
+
+<option value="false">
+Not Available
+</option>
+
+</select>
+
+</div>
+
+
+
+<button 
+class="primary-button"
+id="addShelterBtn">
+
+Add Shelter
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="form-card">
+
+
+<h2>
+Available Shelters
+</h2>
+
+
+
+<div id="shelterList">
+
+<p>
+Loading shelters...
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+
+<footer class="site-footer">
+
+<div class="container footer-bottom">
+
+<p>
+© 2026 UMEED - Disaster Rescue Management System. SIH Project.
+</p>
+
+</div>
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

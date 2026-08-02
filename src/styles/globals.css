@@ -1,0 +1,125 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #14211b;
+  background: #f5f7f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero-section {
+  display: grid;
+  align-content: center;
+  min-height: 82vh;
+  padding: 64px clamp(20px, 6vw, 96px);
+  background: linear-gradient(135deg, #eef4ee 0%, #dce9e4 55%, #f6efe4 100%);
+}
+
+.hero-section h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 8vw, 88px);
+  line-height: 1;
+}
+
+.hero-section p {
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.primary-link,
+.secondary-link,
+.module-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-link {
+  color: #ffffff;
+  background: #2f7d5b;
+}
+
+.secondary-link,
+.module-card a {
+  color: #14211b;
+  border: 1px solid #9eb2a8;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.module-section {
+  padding: 56px clamp(20px, 6vw, 96px) 80px;
+  background: #ffffff;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading h2 {
+  margin: 0 0 28px;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.08;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.module-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 240px;
+  padding: 24px;
+  border: 1px solid #d8e1dc;
+  border-radius: 8px;
+  background: #f8faf7;
+}
+
+.module-card h3,
+.module-card p {
+  margin: 0;
+}
+
+.module-card p {
+  color: #596860;
+}
+
+.module-card a {
+  justify-self: start;
+  margin-top: auto;
+}

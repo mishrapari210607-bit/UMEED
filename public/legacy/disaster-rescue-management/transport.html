@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transport Assignment | UMEED</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+<nav class="navbar container">
+
+
+<a class="logo" href="index.html">
+
+<span class="logo-icon">✚</span>
+
+<span class="logo-text">
+
+<strong>UMEED</strong>
+
+<small>
+Unified Management for Emergency Evacuation and Disaster Response
+</small>
+
+</span>
+
+</a>
+
+
+
+<button class="menu-toggle" type="button">
+☰
+</button>
+
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="migration-center.html">Migration Centres</a></li>
+
+<li><a class="active" href="transport.html">Transport</a></li>
+
+<li><a href="registration.html">Registration</a></li>
+
+<li><a href="medical.html">Medical</a></li>
+
+<li><a href="shelter.html">Shelter</a></li>
+
+<li><a href="relief.html">Relief</a></li>
+
+<li><a href="status.html">Victim Status</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<main>
+
+
+
+<section class="page-hero">
+
+<div class="container">
+
+<p class="section-label">
+RESCUE COORDINATION
+</p>
+
+
+<h1>
+Transport Assignment
+</h1>
+
+
+<p>
+Assign vehicles and transport rescued victims safely to migration centres.
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section class="locator-section">
+
+<div class="container">
+
+
+
+<div class="form-card">
+
+
+
+<div class="list-heading">
+
+<h2>
+Assign Transport
+</h2>
+
+<p>
+Allocate available vehicles for victims.
+</p>
+
+
+</div>
+
+
+
+
+
+<form class="details-form" id="transportForm">
+
+
+
+<div class="form-grid">
+
+
+
+
+
+<!-- Victim Dropdown -->
+
+<div class="form-group">
+
+<label for="victimSelect">
+Select Victim
+</label>
+
+
+<select id="victimSelect" required>
+
+<option value="">
+Select Victim
+</option>
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Vehicle Number -->
+
+<div class="form-group">
+
+<label for="vehicleNumber">
+Vehicle Number
+</label>
+
+
+<input 
+type="text"
+id="vehicleNumber"
+placeholder="Enter vehicle number"
+required>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Vehicle Type -->
+
+<div class="form-group">
+
+<label for="vehicleType">
+Vehicle Type
+</label>
+
+
+<select id="vehicleType" required>
+
+
+<option value="">
+Select Type
+</option>
+
+
+<option value="Ambulance">
+Ambulance
+</option>
+
+
+<option value="Bus">
+Bus
+</option>
+
+
+<option value="Truck">
+Truck
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Driver Name -->
+
+<div class="form-group">
+
+<label for="driverName">
+Driver Name
+</label>
+
+
+<input
+type="text"
+id="driverName"
+placeholder="Enter driver name"
+required>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Driver Contact -->
+
+<div class="form-group">
+
+<label for="driverContact">
+Driver Contact
+</label>
+
+
+<input
+type="text"
+id="driverContact"
+placeholder="Enter contact number"
+required>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Destination -->
+
+
+<div class="form-group">
+
+<label for="destinationCentre">
+Destination Centre
+</label>
+
+<select id="destinationCentre" required>
+
+<option value="">
+Select Destination Centre
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Status -->
+
+<div class="form-group">
+
+<label for="transportStatus">
+Status
+</label>
+
+
+<select id="transportStatus">
+
+
+<option value="Available">
+Available
+</option>
+
+
+<option value="Assigned">
+Assigned
+</option>
+
+
+<option value="Completed">
+Completed
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<button class="primary-button" type="submit">
+
+Assign Transport
+
+</button>
+
+
+
+</form>
+
+
+
+
+</div>
+
+
+
+
+
+<section class="status-overview">
+
+
+<h2>
+Transport Progress
+</h2>
+
+
+
+<div class="progress-steps">
+
+
+
+<article class="progress-step completed">
+
+<span>
+✓
+</span>
+
+
+<h3>
+Rescue Confirmed
+</h3>
+
+
+<p>
+Victim picked up safely.
+</p>
+
+
+</article>
+
+
+
+
+
+<article class="progress-step active-step">
+
+<span>
+2
+</span>
+
+
+<h3>
+In Transit
+</h3>
+
+
+<p>
+Vehicle is moving towards centre.
+</p>
+
+
+</article>
+
+
+
+
+
+
+<article class="progress-step">
+
+<span>
+3
+</span>
+
+
+<h3>
+Centre Arrival
+</h3>
+
+
+<p>
+Victim registration starts.
+</p>
+
+
+</article>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<a class="primary-button" href="registration.html">
+
+Proceed to Registration →
+
+</a>
+
+
+
+</div>
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer class="site-footer">
+
+<div class="container footer-bottom">
+
+
+<p>
+© 2026 UMEED - Disaster Rescue Management System. SIH Project.
+</p>
+
+
+<p>
+Emergency:
+<a href="tel:112">
+112
+</a>
+</p>
+
+
+</div>
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

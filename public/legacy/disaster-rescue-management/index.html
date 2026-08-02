@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UMEED Disaster Rescue Management System dashboard">
+  <title>UMEED | Disaster Rescue Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+  <span class="logo-icon">✚</span>
+
+  <span class="logo-text">
+    <strong>UMEED</strong>
+    <small>Unified Management for Emergency Evacuation and Disaster Response</small>
+  </span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="migration-center.html">Migration Centres</a></li>
+        <li><a href="transport.html">Transport</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="medical.html">Medical</a></li>
+        <li><a href="shelter.html">Shelter</a></li>
+        <li><a href="relief.html">Relief</a></li>
+        <li><a href="status.html">Victim Status</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="section-label">EMERGENCY RESPONSE PLATFORM</p>
+
+          <h1>
+            Disaster Rescue<br>
+            <span>Management System</span>
+          </h1>
+
+          <p>
+            Coordinate rescue support, locate nearby migration centres,
+            assign safe transport, and manage victim care during disasters.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="migration-center.html" class="primary-button">
+              Find Migration Centre →
+            </a>
+
+            <a href="transport.html" class="secondary-button">
+              Assign Transport
+            </a>
+          </div>
+        </div>
+
+        <!-- Disaster Map Card -->
+        <article class="map-card">
+          <div class="card-heading">
+            <div>
+              <p class="card-label">LIVE RESPONSE</p>
+              <h2>Disaster Map</h2>
+            </div>
+            <span class="live-status">● Live</span>
+          </div>
+
+          <div class="map-placeholder">
+            <div class="map-grid"></div>
+
+            <div class="map-marker danger-marker">
+              <span>!</span>
+              <p>Flood Alert</p>
+            </div>
+
+            <div class="map-marker centre-marker">
+              <span>⌂</span>
+              <p>Safe Centre</p>
+            </div>
+
+            <div class="map-marker user-marker">
+              <span>●</span>
+              <p>Your Location</p>
+            </div>
+          </div>
+
+          <div class="map-footer">
+            <span><i class="dot red-dot"></i> Active Incident</span>
+            <span><i class="dot green-dot"></i> Migration Centre</span>
+            <a href="migration-center.html">View Centres →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dashboard Services Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-label blue-label">UMEED SERVICES</p>
+            <h2>Emergency support, all in one place.</h2>
+          </div>
+
+          <p>
+            Use these modules to coordinate the victim journey from rescue
+            to safe shelter and final status updates.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <!-- Migration Centre Locator Card -->
+          <article class="service-card">
+            <div class="service-icon centre-icon">⌂</div>
+            <h3>Migration Centre Locator</h3>
+            <p>
+              Search nearby migration centres and check available beds,
+              capacity, distance, contact details, and centre status.
+            </p>
+            <a href="migration-center.html">Find a Centre →</a>
+          </article>
+
+          <!-- Transport Assignment Card -->
+          <article class="service-card">
+            <div class="service-icon transport-icon">▰</div>
+            <h3>Transport Assignment</h3>
+            <p>
+              View assigned vehicles, driver details, destination centres,
+              and the current transport status for rescued victims.
+            </p>
+            <a href="transport.html">View Transport →</a>
+          </article>
+
+          <!-- Medical Assistance Card -->
+          <article class="service-card">
+            <div class="service-icon medical-icon">✚</div>
+            <h3>Medical Assistance</h3>
+            <p>
+              Record injury status, treatment requirements, medical team
+              details, and the victim's current health condition.
+            </p>
+            <a href="medical.html">Medical Assessment →</a>
+          </article>
+
+          <!-- Victim Registration Card -->
+          <article class="service-card">
+            <div class="service-icon registration-icon">▣</div>
+            <h3>Victim Registration</h3>
+            <p>
+              Register a rescued victim on arrival using an existing
+              read-only Rescue ID and assigned migration centre.
+            </p>
+            <a href="registration.html">Register Victim →</a>
+          </article>
+
+          <!-- Shelter Allocation Card -->
+          <article class="service-card">
+            <div class="service-icon shelter-icon">▤</div>
+            <h3>Shelter Allocation</h3>
+            <p>
+              Track tent or room allocation, bed numbers, family members,
+              and shelter availability for each victim.
+            </p>
+            <a href="shelter.html">Allocate Shelter →</a>
+          </article>
+
+          <!-- Relief Distribution Card -->
+          <article class="service-card">
+            <div class="service-icon relief-icon">◈</div>
+            <h3>Food & Essential Supplies</h3>
+            <p>
+              Monitor the distribution status of food, water, medicine,
+              blankets, and clothes for victims at the centre.
+            </p>
+            <a href="relief.html">View Relief Details →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Status Section -->
+    <section class="status-banner">
+      <div class="container status-banner-content">
+        <div>
+          <p class="section-label">VICTIM CARE STATUS</p>
+          <h2>Track a victim's journey to safety.</h2>
+        </div>
+
+        <a href="status.html" class="light-button">
+          View Final Victim Status →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">✚</span>
+          <span>UMEED</span>
+        </a>
+
+        <p>
+          UMEED supports coordinated emergency response and victim care
+          during critical situations.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Emergency Contact</h3>
+        <a href="tel:112">112 — National Emergency</a>
+        <a href="tel:108">108 — Ambulance Support</a>
+        <a href="mailto:support@umeed.gov.in">support@umeed.gov.in</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Modules</h3>
+        <a href="migration-center.html">Migration Centres</a>
+        <a href="transport.html">Transport Assignment</a>
+        <a href="medical.html">Medical Assistance</a>
+        <a href="status.html">Victim Status</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 UMEED — Disaster Rescue Management System. SIH Project.</p>
+      <p>Prepared for safer, resilient communities.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

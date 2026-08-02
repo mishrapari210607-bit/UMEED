@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Victim Registration | UMEED</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+<nav class="navbar container">
+
+<a class="logo" href="index.html">
+
+<span class="logo-icon">✚</span>
+
+<span class="logo-text">
+<strong>UMEED</strong>
+<small>
+Unified Management for Emergency Evacuation and Disaster Response
+</small>
+</span>
+
+</a>
+
+
+<button class="menu-toggle" type="button">☰</button>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="migration-center.html">Migration Centres</a></li>
+<li><a href="transport.html">Transport</a></li>
+<li><a class="active" href="registration.html">Registration</a></li>
+<li><a href="medical.html">Medical</a></li>
+<li><a href="shelter.html">Shelter</a></li>
+<li><a href="relief.html">Relief</a></li>
+<li><a href="status.html">Victim Status</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+<section class="page-hero">
+
+<div class="container">
+
+<p class="section-label">CENTRE ARRIVAL</p>
+
+<h1>Victim Registration</h1>
+
+<p>
+Record the arrival of rescued victims at their assigned migration centre.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="locator-section">
+
+<div class="container">
+
+
+<div class="form-card">
+
+
+<div class="list-heading">
+
+<h2>Arrival Registration Form</h2>
+
+<p>
+Complete the victim details after centre arrival.
+</p>
+
+</div>
+
+
+
+<form class="details-form" id="registrationForm">
+
+
+<div class="form-grid">
+
+
+
+<div class="form-group">
+
+<label>Rescue ID</label>
+
+<input id="registrationId" value="DR-10234">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Victim Name</label>
+
+<input id="registrationName"
+placeholder="Enter victim name">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Age</label>
+
+<input id="age" type="number">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Gender</label>
+
+<select id="gender">
+
+<option value="">
+Select Gender
+</option>
+
+<option value="Male">
+Male
+</option>
+
+<option value="Female">
+Female
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Contact Number</label>
+
+<input id="contact" type="tel">
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Emergency Contact</label>
+
+<input id="emergencyContact" type="tel">
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Source Location</label>
+
+<input id="sourceLocation"
+placeholder="Rescue location">
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Assigned Migration Centre</label>
+
+
+<select id="assignedCentre">
+
+<option>
+Chennai Community Hall
+</option>
+
+<option>
+Velachery Government School
+</option>
+
+<option>
+Marina Relief Camp
+</option>
+
+</select>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<button class="primary-button" type="submit">
+
+Save Registration
+
+</button>
+
+
+<p id="message"></p>
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+
+<footer class="site-footer">
+
+<div class="container footer-bottom">
+
+<p>
+© 2026 Disaster Rescue Management System. SIH Project.
+</p>
+
+<p>
+Emergency:
+<a href="tel:112">112</a>
+</p>
+
+</div>
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+
+
+<script>
+
+
+const API_URL = "http://127.0.0.1:8000/api/victims/";
+
+
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(event){
+
+
+event.preventDefault();
+
+
+
+const victimData = {
+
+
+drid:
+document.getElementById("registrationId").value,
+
+
+name:
+document.getElementById("registrationName").value,
+
+
+age:
+Number(document.getElementById("age").value),
+
+
+gender:
+document.getElementById("gender").value,
+
+
+phone:
+document.getElementById("contact").value,
+
+
+emergency_contact:
+document.getElementById("emergencyContact").value,
+
+
+source_location:
+document.getElementById("sourceLocation").value,
+
+current_location:
+document.getElementById("assignedCentre").value,
+
+
+status:
+"Waiting"
+
+
+};
+
+
+
+console.log("Sending:", victimData);
+
+
+
+fetch(API_URL, {
+
+
+method:"POST",
+
+
+headers:{
+
+
+"Content-Type":"application/json"
+
+
+},
+
+
+body:
+JSON.stringify(victimData)
+
+
+})
+
+
+.then(response=>{
+
+
+if(!response.ok){
+
+
+return response.json()
+.then(error=>{
+
+
+console.log(error);
+
+throw new Error("Registration failed");
+
+
+});
+
+
+}
+
+
+return response.json();
+
+
+})
+
+
+.then(data=>{
+
+
+document.getElementById("message").innerHTML =
+"✅ Victim registered successfully";
+
+
+console.log(data);
+
+
+document
+.getElementById("registrationForm")
+.reset();
+
+
+})
+
+
+.catch(error=>{
+
+
+document.getElementById("message").innerHTML =
+"❌ " + error.message;
+
+
+console.error(error);
+
+
+});
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
