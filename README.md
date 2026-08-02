@@ -1,6 +1,14 @@
 # UMEED
 
-UMEED is a disaster response and rescue coordination project. It includes a Vite React landing page, imported static dashboard pages, and the backend projects imported from the provided zip files.
+UMEED stands for Unified Emergency Management, Evacuation and Displacement. This project is a disaster response and rescue coordination workspace with a Vite React landing page, imported static dashboard pages, and backend projects preserved from the provided zip files.
+
+## Stack
+
+- React + Vite frontend
+- Plain CSS
+- Imported static HTML/CSS/JS modules under `public/legacy`
+- Starter FastAPI backend under `backend`
+- Imported Django backend projects under `backend/django`
 
 ## Project Structure
 
@@ -117,7 +125,7 @@ cd "C:\Users\Pari Mishra\OneDrive\Desktop\umeed\backend\django\id_generation"
 python manage.py runserver
 ```
 
-Use the matching Python/Django dependencies for each imported project if you want to run them independently.
+Use the matching Python and Django dependencies for each imported project if you want to run them independently.
 
 ## Notes
 
