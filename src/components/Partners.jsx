@@ -1,19 +1,21 @@
-const partners = [
-  ["NDRF", "/legacy/disaster-rescue-management/index.html"],
-  ["Local shelters", "/legacy/disaster-rescue-management/shelter.html"],
-  ["Medical teams", "/legacy/disaster-rescue-management/medical.html"],
-  ["Relief depots", "/legacy/disaster-rescue-management/relief.html"],
-  ["Volunteers", "/legacy/disaster-rescue-management/registration.html"],
-];
+import { PARTNERS } from '../data/site'
 
 export default function Partners() {
+  const loop = [...PARTNERS, ...PARTNERS]
   return (
-    <section className="partners" aria-label="Partners">
-      {partners.map(([partner, href]) => (
-        <a href={href} key={partner}>
-          {partner}
-        </a>
-      ))}
+    <section className="partners" aria-label="Partner agencies and organisations">
+      <div className="shell">
+        <p className="partners__label">
+          Coordinating {PARTNERS.length}+ agencies, relief bodies and NGOs across India
+        </p>
+      </div>
+      <div className="partners__viewport">
+        <div className="partners__track">
+          {loop.map((p, i) => (
+            <span className="partners__item" key={i}>{p}</span>
+          ))}
+        </div>
+      </div>
     </section>
-  );
+  )
 }

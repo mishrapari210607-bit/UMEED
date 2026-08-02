@@ -1,12 +1,31 @@
+import { ALERTS } from '../data/site'
+
+const LEVEL_LABEL = { severe: 'Severe', high: 'High', watch: 'Watch' }
+
 export default function AlertTicker() {
+  // Duplicate the list so the marquee loops seamlessly.
+  const loop = [...ALERTS, ...ALERTS]
+
   return (
-    <section className="alert-ticker" aria-label="Live alerts">
-      <strong>Live readiness</strong>
-      <div>
-        <span>Flood risk watch active in river-adjacent zones</span>
-        <span>248 volunteer teams online</span>
-        <span>Inventory sync every 15 minutes</span>
+    <div className="ticker" id="alerts" aria-label="Live disaster alerts">
+      <div className="ticker__tag">
+        <span className="ticker__dot" />
+        Live Alerts
       </div>
-    </section>
-  );
+      <div className="ticker__viewport">
+        <div className="ticker__track">
+          {loop.map((a, i) => (
+            <span className="ticker__item" key={i}>
+              <span className={`ticker__level ticker__level--${a.level}`}>
+                {LEVEL_LABEL[a.level]}
+              </span>
+              <strong>{a.region}</strong>
+              <span className="ticker__text">{a.text}</span>
+              <span className="ticker__sep">•</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }

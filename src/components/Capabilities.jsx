@@ -1,47 +1,42 @@
-import Icon from "./Icon";
-
-const capabilities = [
-  {
-    icon: "map",
-    title: "Hazard map",
-    text: "Django hazard models, thresholds, readings, and population services.",
-    href: "/legacy/disaster-rescue-management/index.html",
-  },
-  {
-    icon: "id",
-    title: "Rescue IDs",
-    text: "Emergency ID generation, validation, and citizen support flows.",
-    href: "/legacy/id-generation/index.html",
-  },
-  {
-    icon: "supply",
-    title: "Relief supply",
-    text: "Inventory and relief routing from the rescue management module.",
-    href: "/legacy/disaster-rescue-management/relief.html",
-  },
-  {
-    icon: "radio",
-    title: "Live tracking",
-    text: "Transport, medical, shelter, and victim status coordination.",
-    href: "/legacy/disaster-rescue-management/status.html",
-  },
-];
+import { useInView } from '../hooks/useInView'
+import Icon from './Icon'
+import { CAPABILITIES } from '../data/site'
 
 export default function Capabilities() {
+  const [ref, inView] = useInView()
+
   return (
-    <section className="section capabilities" id="capabilities">
-      <p className="section-kicker">Capabilities</p>
-      <h2>Your imported modules, organized into one UMEED shell.</h2>
-      <div className="capability-grid">
-        {capabilities.map((capability) => (
-          <a className="capability-card" href={capability.href} key={capability.title}>
-            <Icon name={capability.icon} />
-            <h3>{capability.title}</h3>
-            <p>{capability.text}</p>
-            <span>Open module</span>
-          </a>
-        ))}
+    <section className="caps" id="resources" ref={ref}>
+      <div className="shell">
+        <div className={`caps__head reveal ${inView ? 'in' : ''}`}>
+          <div>
+            <span className="eyebrow">Core capabilities</span>
+            <h2 className="section-title">Everything a response<br />needs, in one place</h2>
+          </div>
+          <p className="section-serif caps__intro">
+            Built with the people who run relief operations, not for a demo but
+            for the worst day a district will ever see.
+          </p>
+        </div>
+
+        <div className="caps__grid">
+          {CAPABILITIES.map((c, i) => (
+            <a
+              key={c.title}
+              className={`cap reveal ${inView ? 'in' : ''}`}
+              href={c.href}
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <span className="cap__icon">
+                <Icon name={c.icon} size={24} />
+              </span>
+              <h3 className="cap__title">{c.title}</h3>
+              <p className="cap__text">{c.text}</p>
+              <span className="cap__link">Open feature <Icon name="arrow" size={15} /></span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
-  );
+  )
 }
